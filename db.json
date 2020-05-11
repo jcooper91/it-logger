@@ -1,32 +1,25 @@
 {
   "logs": [
     {
-      "message": "Changed network card in server 007",
+      "message": "Change server card",
       "attention": false,
-      "tech": "Sam Smith",
-      "date": "2019-05-31T15:46:10.179Z",
+      "tech": "John Doe",
+      "date": "2020-04-22T15:34:27.857Z",
       "id": 1
     },
     {
       "id": 2,
-      "message": "Fixed hard drive on workstation 002",
-      "attention": false,
-      "tech": "John Doe",
-      "date": "2019-05-31T16:18:04.245Z"
-    },
-    {
-      "message": "1122 wireless down",
+      "message": "Fix PC now",
       "attention": true,
-      "tech": "Sara Wilson",
-      "date": "2019-05-31T15:46:48.690Z",
-      "id": 3
+      "tech": "Sam Smith",
+      "date": "2020-05-06T15:36:12.846Z"
     },
     {
-      "id": 4,
-      "message": "Workstation 026 is up and running",
+      "id": 3,
+      "message": "Fix Monitor",
       "attention": false,
-      "tech": "Sara Wilson",
-      "date": "2019-05-31T19:57:35.544Z"
+      "tech": "Sam Smith",
+      "date": "2020-05-06T16:58:56.166Z"
     }
   ],
   "techs": [
@@ -49,6 +42,41 @@
       "firstName": "Peter",
       "lastName": "Cook",
       "id": 4
+    },
+    {
+      "firstName": "Greg",
+      "lastName": "Harris",
+      "id": 5
+    },
+    {
+      "firstName": "James",
+      "lastName": "Taylor",
+      "id": 6
+    },
+    {
+      "firstName": "Simon",
+      "lastName": "Evans",
+      "id": 7
+    },
+    {
+      "firstName": "Derren",
+      "lastName": "Brown",
+      "id": 8
+    },
+    {
+      "firstName": "Dennis",
+      "lastName": "Taylor",
+      "id": 9
+    },
+    {
+      "firstName": "Ronnie",
+      "lastName": "Rogga",
+      "id": 10
+    },
+    {
+      "firstName": "Timmy",
+      "lastName": "Taylor",
+      "id": 11
     }
   ]
 }

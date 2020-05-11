@@ -1,27 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
 import LogItem from './LogItem'
 import Preloader from '../layout/Preloader'
+import PropTypes from 'prop-types'
+import { getLogs } from '../../actions/logActions'
 
-const Logs = () => {
-
-const [logs, setLogs] = useState([])
-const [loading, setLoading] = useState(false)
+const Logs = ({ log: { logs, loading }, getLogs }) => {
 
 useEffect(() => {
   getLogs()
   // es-lint-disable-next-line
-}, [])
+}, [getLogs])
 
-const getLogs = async () => {
-  setLoading(true)
-  const res = await fetch('/logs')
-  const data = await res.json()
-
-  setLogs(data)
-  setLoading(false)
-}
-
-if(loading) {
+if(loading || logs === null) {
   return <Preloader />
 }
 
@@ -35,4 +26,19 @@ if(loading) {
   )
 }
 
-export default Logs
+Logs.propTypes = {
+  log: PropTypes.object.isRequired,
+  getLogs: PropTypes.func.isRequired
+}
+
+//  Map state to props 
+const mapStateToProps = state => ({
+  log: state.log // state.log refers to our rootReducer 
+
+  // alternative way to passing it in ass props to the function 
+  // logs: state.log.logs,
+  // loading: state.log.loading
+})
+
+// only use mapStateToProps when you are bringing in state
+export default connect(mapStateToProps, { getLogs })(Logs)
