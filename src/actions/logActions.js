@@ -1,6 +1,7 @@
 import { GET_LOGS, ADD_LOG, SET_LOADING, LOGS_ERROR, DELETE_LOG, SET_CURRENT, CLEAR_CURRENT, UPDATE_LOG, SEARCH_LOGS } from './types'
 
 export const getLogs = () => async dispatch => {
+  
   try {
     setLoading()
 
@@ -21,6 +22,7 @@ export const getLogs = () => async dispatch => {
 }
 
 export const addLog = (log) => async dispatch => {
+
   try {
     setLoading()
 
@@ -47,6 +49,7 @@ export const addLog = (log) => async dispatch => {
 }
 
 export const deleteLog = id => async dispatch => {
+
   try {
     setLoading()
 
@@ -67,8 +70,8 @@ export const deleteLog = id => async dispatch => {
   }
 }
 
-// search logs 
 export const searchLogs = text => async dispatch => {
+
   try {
     setLoading()
 
@@ -88,8 +91,6 @@ export const searchLogs = text => async dispatch => {
   }
 }
 
-
-// update log on server
 export const updateLog = log => async dispatch => {
   
   try {
@@ -118,7 +119,6 @@ export const updateLog = log => async dispatch => {
   }
 }
 
-// set current log
 export const setCurrent = log => {
   return {
     type: SET_CURRENT,
@@ -126,7 +126,6 @@ export const setCurrent = log => {
   }
 }
 
-// clear current log
 export const clearCurrent = () => {
   return {
     type: CLEAR_CURRENT

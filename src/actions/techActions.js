@@ -1,7 +1,7 @@
 import { GET_TECHS, ADD_TECH, DELETE_TECH, SET_LOADING, TECHS_ERROR } from './types'
 
-// get techs from server 
 export const getTechs = () => async dispatch => {
+
   try {
     setLoading()
 
@@ -22,6 +22,7 @@ export const getTechs = () => async dispatch => {
 }
 
 export const addTech = (tech) => async dispatch => {
+
   try {
     setLoading()
 
@@ -47,8 +48,29 @@ export const addTech = (tech) => async dispatch => {
   }
 }
 
+export const deleteTech = (id) => async dispatch => {
 
-// set loading to true
+  try {
+    setLoading()
+
+     await fetch(`/techs/${id}`, {
+       method: 'DELETE'
+     })
+    
+
+    dispatch({
+      type: DELETE_TECH,
+      payload: id
+    })
+
+  } catch (err) {
+    dispatch({
+      type: TECHS_ERROR,
+      payload: err.response.statusText
+    })
+  }
+}
+
 export const setLoading = () => {
   return {
     type: SET_LOADING

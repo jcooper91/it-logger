@@ -37,16 +37,16 @@ export default(state = initialState, action) => {
         ...state,
         logs: state.logs.map(log => log.id === action.payload.id ? action.payload : log)
       }  
-   case SET_CURRENT: 
-    return {
-      ...state,
-      current: action.payload
-    }   
-   case CLEAR_CURRENT:
-    return {
-      ...state,
-      current: null
-    } 
+    case SET_CURRENT: 
+      return {
+        ...state,
+        current: action.payload
+      }   
+    case CLEAR_CURRENT:
+      return {
+        ...state,
+        current: null
+      } 
     case SET_LOADING:
       return {
         ...state,
